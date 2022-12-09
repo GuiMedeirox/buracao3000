@@ -1,13 +1,8 @@
 from django.contrib import admin
 from django.apps import apps
-from .models import * 
+from .models import buracos, buracos_status
 
 
 # Register your models here.
 
-models = apps.get_models()
-for model in models:
-  try:
-    admin.site.register(model)
-  except admin.sites.AlreadyRegistered: 
-    pass
+admin.site.register(buracos, buracos_status)

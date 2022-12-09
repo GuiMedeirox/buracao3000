@@ -1,40 +1,16 @@
+
 from django.db import models
+from django.contrib import admin
 from email.policy import default
 # Create your models here.
-
-# class situacoes(models.Model):
-#   situ_situacao = models.CharField("Situacao", max_length=255, blank=False, null=False,default='leve') 
-#   def __str__(self):
-#     return self.situacoes
-#   class Meta: 
-#     verbose_name_plural = "Situações"
-
-# class bairros(models.Model):
-#   ba_bairro =
-  # def __str__(self):
-  #   return self.bairros
-#   class Meta: 
-#     verbose_name_plural = "Bairros"
-
-# class ruas(models.Model): 
-#   ru_rua = models.CharField("Rua", max_length=255, blank=False, null=False)
-#   def __str__(self):
-#     return self.ruas
-#   class Meta: 
-#     verbose_name_plural = "Ruas"
 
 class buracos(models.Model): 
   GRAVIDADE_CHOICES=[
     ["Leve", "Leve"],
     ["Moderado", "Moderado"],
     ["Critico", "Crítico"]
-    # [1, "Leve"],
-    # [2, "Moderado"],
-    # [3, "Crítico"]
   ]
   STATUS_CHOICES=[
-    #[0, "Não Consertado"],
-    #[1, "Consertado"]
     ["Nao Consertado", "Não Consertado"],
     ["Consertado", "Consertado"]
   ]
@@ -47,3 +23,6 @@ class buracos(models.Model):
     verbose_name_plural = "Buracos"
   def __str__(self):
     return self.bu_bairro
+
+class buracos_status(admin.ModelAdmin): 
+  list_display = ['bu_rua', 'bu_bairro', 'bu_status']

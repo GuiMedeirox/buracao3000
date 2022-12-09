@@ -22,13 +22,13 @@
                         </tr>
                       </thead>
                       <tbody>
-                        {% for buraco in buraco %}
+                        {% for buracoInfo in buraco %}
                         <tr>                          
-                          <td>{{buraco.bu_rua}}</td>
-                          <td>{{buraco.bu_bairro}}</td>
-                          <td>{{buraco.bu_quantia}}</td>
-                          <td>{{buraco.bu_status}}</td>                        
-                          <td>{{buraco.bu_gravidade}}</td>                                                  
+                          <td>{{buracoInfo.bu_rua}}</td>
+                          <td>{{buracoInfo.bu_bairro}}</td>
+                          <td>{{buracoInfo.bu_quantia}}</td>
+                          <td>{{buracoInfo.bu_status}}</td>                        
+                          <td>{{buracoInfo.bu_gravidade}}</td>                                                  
                         </tr>
                         {%endfor%}   
                       </tbody>
